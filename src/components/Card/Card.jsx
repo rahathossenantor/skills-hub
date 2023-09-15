@@ -2,7 +2,7 @@ import dollarIcon from '../../assets/dollarSign.svg'
 import bookIcon from '../../assets/book.svg'
 import PropTypes from 'prop-types'
 
-const Card = ({course}) => {
+const Card = ({course, selectCourse}) => {
     const {cover, title, description, price, credit} = course;
     return (
         <div className="border rounded-md shadow-xl">
@@ -18,14 +18,15 @@ const Card = ({course}) => {
                     <p className='flex'><img src={dollarIcon} alt="dollarIcon" /> Price: {price}</p>
                     <p className='flex'><img src={bookIcon} alt="bookIcon" /> Credit: {credit}hr</p>
                 </div>
-                <button className="btn bg-[#2F80ED] hover:bg-[#2F80ED] normal-case text-white w-full" >Select</button>
+                <button onClick={() => selectCourse(course)} className="btn bg-[#2F80ED] hover:bg-[#2F80ED] normal-case text-white w-full" >Select</button>
             </div>
         </div>
     );
 };
 
 Card.propTypes = {
-    course: PropTypes.object.isRequired
+    course: PropTypes.object.isRequired,
+    selectCourse: PropTypes.func.isRequired
 }
 
 export default Card;

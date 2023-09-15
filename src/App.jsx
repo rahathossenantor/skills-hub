@@ -16,13 +16,19 @@ function App() {
     })()
   }, [])
 
+  const [selectedCourses, setSelectedCourses] = useState([]);
+
+  const selectCourse = (course) => {
+    setSelectedCourses([...selectedCourses, course]);
+  }
+
   return (
     <>
       <Header></Header>
 
       <main className="flex 2xl:flex-row xl:flex-row lg:flex-col md:flex-col flex-col">
-        <Cards courses={courses}></Cards>
-        <Cart></Cart>
+        <Cards courses={courses} selectCourse={selectCourse}></Cards>
+        <Cart selectedCourses={selectedCourses}></Cart>
       </main>
     </>
   )
