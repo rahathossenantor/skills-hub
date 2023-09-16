@@ -18,7 +18,7 @@ const Card = ({course, selectCourse}) => {
                     <p className='flex'><img src={dollarIcon} alt="dollarIcon" /> Price: {price}</p>
                     <p className='flex'><img src={bookIcon} alt="bookIcon" /> Credit: {credit}hr</p>
                 </div>
-                <button onClick={() => selectCourse(course)} className="btn bg-[#2F80ED] hover:bg-[#2F80ED] normal-case text-white w-full" >Select</button>
+                <button onClick={() => selectCourse(course)} className="btn bg-[#2F80ED] hover:bg-[#2F80ED] normal-case text-white w-full text-[17px]" >Select</button>
             </div>
         </div>
     );
