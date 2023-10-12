@@ -18,7 +18,7 @@ function App() {
   }, []);
 
   const [selectedCourses, setSelectedCourses] = useState([]);
-  const [totalCreditHours, setTotalCreditHours] = useState(0);
+  const [totalCreditHours, setTotalCreditHours] = useState(20);
   const [remainingCreditHours, setRemainingCreditHours] = useState(0);
 
   const selectCourse = (course) => {
