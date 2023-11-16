@@ -1,5 +1,6 @@
-import Card from '../Card/Card';
-import PropTypes from 'prop-types';
+
+import PropTypes from "prop-types";
+import Card from "./Card";
 
 const Cards = ({courses, selectCourse}) => {
     return (
@@ -16,6 +17,6 @@ const Cards = ({courses, selectCourse}) => {
 Cards.propTypes = {
     courses: PropTypes.array.isRequired,
     selectCourse: PropTypes.func.isRequired
-}
+};
 
 export default Cards;

@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const Cart = ({selectedCourses, totalCreditHours, remainingCreditHours}) => {
 
@@ -36,6 +36,6 @@ Cart.propTypes = {
     selectedCourses: PropTypes.array.isRequired,
     totalCreditHours: PropTypes.number.isRequired,
     remainingCreditHours: PropTypes.number.isRequired
-}
+};
 
 export default Cart;

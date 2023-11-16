@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import Cards from './components/Cards/Cards';
-import Cart from './components/Cart/Cart';
-import Header from './components/Header/Header';
-import Swal from 'sweetalert2';
+import { useEffect, useState } from "react";
+import Cards from "./components/Cards";
+import Cart from "./components/Cart";
+import Header from "./components/Header";
+import Swal from "sweetalert2";
 
 function App() {
   const [courses, setCourses] = useState([]);
@@ -19,18 +18,18 @@ function App() {
 
   const [selectedCourses, setSelectedCourses] = useState([]);
   const [totalCreditHours, setTotalCreditHours] = useState(20);
-  const [remainingCreditHours, setRemainingCreditHours] = useState(0);
+  const [remainingCreditHours, setRemainingCreditHours] = useState(20);
 
   const selectCourse = (course) => {
     const isAlreadyExist = selectedCourses.find(c => c.id === course.id);
     let credits = course.credit;
-    
+
     if (isAlreadyExist) {
       return Swal.fire({
-        title: 'Error!',
-        text: 'Course already selected!',
-        icon: 'error',
-        confirmButtonText: 'close'
+        title: "Error!",
+        text: "Course already selected!",
+        icon: "error",
+        confirmButtonText: "close"
       });
     } else {
       selectedCourses.forEach(c => credits += c.credit);
@@ -39,10 +38,10 @@ function App() {
 
       if (credits > 20) {
         return Swal.fire({
-          title: 'Error!',
-          text: 'Credit finished!',
-          icon: 'error',
-          confirmButtonText: 'close'
+          title: "Error!",
+          text: "Credit finished!",
+          icon: "error",
+          confirmButtonText: "close"
         });
       } else {
         setTotalCreditHours(credits);
@@ -61,7 +60,7 @@ function App() {
         <Cart selectedCourses={selectedCourses} totalCreditHours={totalCreditHours} remainingCreditHours={remainingCreditHours}></Cart>
       </main>
     </>
-  )
+  );
 }
 
 export default App;
